@@ -1,0 +1,92 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pytype/
+.venv/
+venv/
+.env
+.env.*
+.python-version
+
+# Distribution / packaging
+build/
+dist/
+.eggs/
+*.egg-info/
+*.egg
+
+# Jupyter
+.ipynb_checkpoints/
+.ipynb_checkpoints
+
+# ---- Node / Frontend / Hardhat ----
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnp/
+.pnp.js
+
+# Framework/build caches
+.cache/
+.parcel-cache/
+.next/
+.nuxt/
+.svelte-kit/
+.vite/
+.turbo/
+.vercel/
+.vite-inspect/
+
+# Common output dirs
+coverage/
+coverage.json
+artifacts/
+cache/
+dist/
+build/
+
+# Typechain / Hardhat
+typechain-types/
+
+# Env files in subprojects
+backend/.env
+contracts/.env
+frontend/.env
+
+# ---- OS & IDE ----
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Editors
+*~
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Misc
+.envrc
