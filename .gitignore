@@ -39,6 +39,8 @@ pnpm-debug.log*
 .cache/
 .parcel-cache/
 .next/
+.next-dev/
+frontend/.next-dev/
 .nuxt/
 .svelte-kit/
 .vite/
