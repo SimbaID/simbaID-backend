@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production'
+
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
@@ -9,8 +11,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Use a custom dist dir to avoid conflicts with a locked `.next/` folder during dev
-  distDir: ".next-dev",
+  // Use a custom dist dir only in development to avoid conflicts with a locked `.next/` folder
+  ...(isProd ? {} : { distDir: ".next-dev" }),
 }
 
 export default nextConfig
