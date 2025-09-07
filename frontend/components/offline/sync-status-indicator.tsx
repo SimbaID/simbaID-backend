@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { useOfflineSync } from "@/hooks/use-offline-sync"
 import { formatDistanceToNow } from "date-fns"
+import { useEffect, useState } from "react"
 
 interface SyncStatusIndicatorProps {
   variant?: "compact" | "detailed"
@@ -13,10 +14,13 @@ interface SyncStatusIndicatorProps {
 
 export function SyncStatusIndicator({ variant = "compact" }: SyncStatusIndicatorProps) {
   const { syncStatus, syncPendingItems, retryFailedItems, clearFailedItems } = useOfflineSync()
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  if (!mounted) return null
 
   if (variant === "compact") {
     return (
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2" suppressHydrationWarning>
         <Badge
           variant="outline"
           className={`text-xs ${
@@ -63,7 +67,7 @@ export function SyncStatusIndicator({ variant = "compact" }: SyncStatusIndicator
   }
 
   return (
-    <Card>
+    <Card suppressHydrationWarning>
       <CardContent className="p-4">
         <div className="space-y-4">
           {/* Connection Status */}

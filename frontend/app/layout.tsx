@@ -13,6 +13,9 @@ export const metadata: Metadata = {
   description:
     "Secure, voice-biometric decentralized identity system for African users. Create your DID, manage credentials, and access financial services.",
   generator: "v0.app",
+  icons: {
+    icon: "/icon.svg",
+  },
 }
 
 export default function RootLayout({

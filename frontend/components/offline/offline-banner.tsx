@@ -4,11 +4,15 @@ import { WifiOff, RefreshCw } from "lucide-react"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Button } from "@/components/ui/button"
 import { useOfflineSync } from "@/hooks/use-offline-sync"
+import { useEffect, useState } from "react"
 
 export function OfflineBanner() {
   const { syncStatus, syncPendingItems } = useOfflineSync()
+  const [mounted, setMounted] = useState(false)
 
-  if (syncStatus.isOnline) return null
+  // Defer rendering until mounted to avoid SSR/CSR mismatch
+  useEffect(() => setMounted(true), [])
+  if (!mounted || syncStatus.isOnline) return null
 
   return (
     <Alert className="border-orange-200 bg-orange-50">

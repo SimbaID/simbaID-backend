@@ -7,34 +7,43 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative px-4 py-16 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
+      <section
+        className="relative px-4 py-20 sm:px-6 lg:px-8"
+        style={{
+          backgroundImage:
+            'linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65)), url(/landing-hero.jpg)',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="mx-auto max-w-4xl text-center text-white">
           <div className="mb-8">
-            <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
+            <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium backdrop-blur">
               <Shield className="h-4 w-4" />
               Decentralized Identity
             </div>
           </div>
 
-          <h1 className="mb-6 text-4xl font-bold tracking-tight text-foreground sm:text-6xl">
+          <h1 className="mb-6 text-4xl font-bold tracking-tight sm:text-6xl">
             Your Voice is Your <span className="text-primary">Identity</span>
           </h1>
 
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-white/90 leading-relaxed">
             SimbaID uses advanced voice biometrics to create secure, decentralized identities. Access financial
-            services, verify credentials, and connect with your community - all with just your voice.
+            services, verify credentials, and connect with your community — all with just your voice.
           </p>
 
           <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
-            <Link href="/enroll">
+            <Link href="/dashboard">
               <Button size="lg" className="text-lg px-8 py-6">
-                <Mic className="mr-2 h-5 w-5" />
-                Start Voice Enrollment
+                Get Started
               </Button>
             </Link>
-            <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-transparent">
-              Learn More
-            </Button>
+            <Link href="/enroll">
+              <Button variant="outline" size="lg" className="text-lg px-8 py-6 bg-white/10 border-white/30 text-white hover:bg-white/20">
+                Learn More
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
